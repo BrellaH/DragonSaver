@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">DragonSaver</string>
+    <string name="title_activity_sleep_mode">SleepModeActivity</string>
+</resources>
