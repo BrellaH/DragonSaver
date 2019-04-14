@@ -32,15 +32,7 @@ public class HomeModeActivity extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onClick(View v) {
-                Log.d("hello1", "hello1");
                 if(home_mode_switch.isChecked()){
-                    Log.d("hello2", "hello2");
-                    FirebaseDatabase database = FirebaseDatabase.getInstance();
-                    DatabaseReference myRef1 = database.getReference("tests/1/state");
-                    DatabaseReference myRef2 = database.getReference("tests/2/state");
-                    myRef1.setValue(0);
-                    myRef2.setValue(0);
-                    System.out.println("hahahhaahahhah!!");
 
                 }
                 else{
