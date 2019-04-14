@@ -35,16 +35,16 @@ public class ManualActivity extends AppCompatActivity {
                 if(select_all_switch.isChecked()){
                     wash_machine_switch.setChecked(true);
                     tv_switch.setChecked(true);
-                    ref_washing_machine.setValue(0);
-                    ref_tv.setValue(0);
+                    ref_washing_machine.setValue(1);
+                    ref_tv.setValue(1);
 
                 }
                 else{
                     wash_machine_switch.setChecked(false);
                     tv_switch.setChecked(false);
 
-                    ref_washing_machine.setValue(1);
-                    ref_tv.setValue(1);
+                    ref_washing_machine.setValue(0);
+                    ref_tv.setValue(0);
                 }
             }
         });
