@@ -31,8 +31,20 @@ public class DataBase {
     public static int wakeHour = 0;
     public static int wakeMinute = 0;
 
+    public static int washMachineStartHour = 0;
+    public static int washMachineStartMinute = 0;
+    public static int tvStartHour = 0;
+    public static int tvStartMinut = 0;
+    public static int washEndMachineHour = 0;
+    public static int washEndMachineMinute = 0;
+    public static int tvEndHour = 0;
+    public static int tvEndMinut = 0;
+
     public static boolean homeMode = false;
     public static boolean sleepMode = false;
+
+    public static boolean customWM = false;
+    public static boolean customTV = false;
 
     public static void setWashing_machine(int washing_machine) {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -103,6 +115,86 @@ public class DataBase {
 
     public static void setSleepMode(boolean sleepMode) {
         DataBase.sleepMode = sleepMode;
+    }
+
+    public static boolean isCustomWM() {
+        return customWM;
+    }
+
+    public static void setCustomWM(boolean customWM) {
+        DataBase.customWM = customWM;
+    }
+
+    public static boolean isCustomTV() {
+        return customTV;
+    }
+
+    public static void setCustomTV(boolean customTV) {
+        DataBase.customTV = customTV;
+    }
+
+    public static int getWashMachineStartHour() {
+        return washMachineStartHour;
+    }
+
+    public static void setWashMachineStartHour(int washMachineStartHour) {
+        DataBase.washMachineStartHour = washMachineStartHour;
+    }
+
+    public static int getWashMachineStartMinute() {
+        return washMachineStartMinute;
+    }
+
+    public static void setWashMachineStartMinute(int washMachineStartMinute) {
+        DataBase.washMachineStartMinute = washMachineStartMinute;
+    }
+
+    public static int getTvStartHour() {
+        return tvStartHour;
+    }
+
+    public static void setTvStartHour(int tvStartHour) {
+        DataBase.tvStartHour = tvStartHour;
+    }
+
+    public static int getTvStartMinut() {
+        return tvStartMinut;
+    }
+
+    public static void setTvStartMinut(int tvStartMinut) {
+        DataBase.tvStartMinut = tvStartMinut;
+    }
+
+    public static int getWashEndMachineHour() {
+        return washEndMachineHour;
+    }
+
+    public static void setWashEndMachineHour(int washEndMachineHour) {
+        DataBase.washEndMachineHour = washEndMachineHour;
+    }
+
+    public static int getWashEndMachineMinute() {
+        return washEndMachineMinute;
+    }
+
+    public static void setWashEndMachineMinute(int washEndMachineMinute) {
+        DataBase.washEndMachineMinute = washEndMachineMinute;
+    }
+
+    public static int getTvEndHour() {
+        return tvEndHour;
+    }
+
+    public static void setTvEndHour(int tvEndHour) {
+        DataBase.tvEndHour = tvEndHour;
+    }
+
+    public static int getTvEndMinut() {
+        return tvEndMinut;
+    }
+
+    public static void setTvEndMinut(int tvEndMinut) {
+        DataBase.tvEndMinut = tvEndMinut;
     }
 
 }

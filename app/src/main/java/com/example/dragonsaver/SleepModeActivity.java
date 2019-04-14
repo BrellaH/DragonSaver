@@ -103,6 +103,7 @@ public class SleepModeActivity extends AppCompatActivity {
         final ColorStateList muted_checkBoxColorState = new ColorStateList(states, mute_colors);
         int colors[] = {getResources().getColor(R.color.orange5),getResources().getColor(R.color.orange5)};
         final Switch sleep_mode_switch = findViewById(R.id.sleep_mode_switch);
+
         DataBase.setSleepMode(false);
         sleep_mode_switch.setChecked(false);
         wakeTime1.setTextColor(Color.parseColor("#aaaaaa"));
