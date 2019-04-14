@@ -22,6 +22,7 @@ import org.w3c.dom.Text;
 
 public class HomeModeActivity extends AppCompatActivity {
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +42,12 @@ public class HomeModeActivity extends AppCompatActivity {
         int colors[] = {getResources().getColor(R.color.orange5),getResources().getColor(R.color.orange5)};
         final ColorStateList unmuted_checkBoxColorState = new ColorStateList(states, colors);
 
+        if(DataBase.getHomeMode()){
+            home_mode_switch.setChecked(true);
+        }else{
+            home_mode_switch.setChecked(false);
+        }
+
 
         if(home_mode_switch.isChecked()){
             wash_machine_text.setTextColor(getResources().getColor(R.color.orange5));
@@ -58,12 +65,14 @@ public class HomeModeActivity extends AppCompatActivity {
             CompoundButtonCompat.setButtonTintList(wash_machine_checkBox, muted_checkBoxColorState);
             CompoundButtonCompat.setButtonTintList(tv_checkBox, muted_checkBoxColorState);
         }
+
         home_mode_switch.setOnClickListener(new View.OnClickListener() {
             @TargetApi(Build.VERSION_CODES.P)
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onClick(View v) {
                 if(home_mode_switch.isChecked()){
+                    DataBase.setHomeMode(true);
                     wash_machine_text.setTextColor(getResources().getColor(R.color.orange5));
                     tv_text.setTextColor(getResources().getColor(R.color.orange5));
                     wash_machine_checkBox.setTextColor(getResources().getColor(R.color.orange5));
@@ -76,6 +85,7 @@ public class HomeModeActivity extends AppCompatActivity {
                     tv_checkBox.setClickable(true);
                 }
                 else{
+                    DataBase.setHomeMode(false);
                     wash_machine_text.setTextColor(Color.parseColor("#aaaaaa"));
                     tv_text.setTextColor(Color.parseColor("#aaaaaa"));
 

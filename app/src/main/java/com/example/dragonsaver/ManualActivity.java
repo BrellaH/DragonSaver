@@ -1,5 +1,7 @@
 package com.example.dragonsaver;
 
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +11,7 @@ import android.widget.Switch;
 
 public class ManualActivity extends AppCompatActivity {
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,7 +22,7 @@ public class ManualActivity extends AppCompatActivity {
         final Switch wash_machine_switch = (Switch) findViewById(R.id.wash_machine_switch);
         final Switch tv_switch = (Switch) findViewById(R.id.tv_switch);
 
-        if(DataBase.get_tv() == 0){
+        if(DataBase.getTv() == 0){
             tv_switch.setChecked(false);
         }
         else{
@@ -33,6 +36,7 @@ public class ManualActivity extends AppCompatActivity {
         }
 
         select_all_switch.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View v) {
                 if(select_all_switch.isChecked()){
